@@ -14,20 +14,24 @@ public class testeCDBeLC {
 
     @Test
     public void testCDB() {
-        int tempo = 1;
+        int tempo = 1; // meses
+//        int tempo = 2; // meses
         Double valor = 5000.0;
         Double retorno = 5044.24;
+//        Double retorno = 5088.99;
         CDBeLC t1 = new CDBeLC(valor, tempo);
         assertEquals(retorno, t1.simuladorLCA());
     }
 
     @Test
     public void testLC() {
-        int tempo = 1;
+        int tempo = 1; // meses
+//        int tempo = 2 // meses
         Double valor = 5000.0;
         Double retorno = 5043.50;
+//        Double retorno = 5087.48;
         CDBeLC t2 = new CDBeLC(valor, tempo);
-        assertEquals(retorno, t1.simuladorLCA());
+        assertEquals(retorno, t2.simuladorLCA());
     }
 
 }
