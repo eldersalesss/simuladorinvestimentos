@@ -9,6 +9,7 @@ import org.junit.Test;
  */
 public class testeCDBeLC {
 
+    // teste
     public testeCDBeLC() {
     }
 
