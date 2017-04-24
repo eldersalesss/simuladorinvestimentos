@@ -20,7 +20,7 @@ public class testeCDBeLC {
         Double retorno = 5044.24;
 //        Double retorno = 5088.99;
         CDBeLC t1 = new CDBeLC(valor, tempo);
-        assertEquals(retorno, t1.simuladorLCA());
+        assertEquals(retorno, t1.simuladorCDB());
     }
 
     @Test
@@ -31,7 +31,7 @@ public class testeCDBeLC {
         Double retorno = 5043.50;
 //        Double retorno = 5087.48;
         CDBeLC t2 = new CDBeLC(valor, tempo);
-        assertEquals(retorno, t2.simuladorLCA());
+        assertEquals(retorno, t2.simuladorLC());
     }
 
 }
