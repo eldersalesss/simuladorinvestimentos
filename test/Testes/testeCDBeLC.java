@@ -1,5 +1,6 @@
 package Testes;
 
+import Classes.CDBeLC;
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 

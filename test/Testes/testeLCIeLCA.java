@@ -1,6 +1,7 @@
 package Testes;
 
 
+import Classes.LCIeLCA;
 import org.junit.Test;
 import static org.junit.Assert.*;
 

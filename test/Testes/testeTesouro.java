@@ -1,5 +1,6 @@
 package Testes;
 
+import Classes.TesouroDireto;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -57,8 +58,9 @@ public class testeTesouro {
         Assert.assertEquals(retorno, tesouro.simulador_MensalSelic());
     }
 
+    // Mudei o nome do método porque estava igual ao do primeiro método do IPCA
     @Test
-    public void testIPCA(){
+    public void testIPCAMensal(){
         int tempo = 6;
         Double valor = 5000.0; //Inserido mensalmente durante o periodo de tempo. 6 meses = 6 vezes.
         Double retorno = 30655.67;
@@ -67,8 +69,10 @@ public class testeTesouro {
         Assert.assertEquals(retorno, tesouro.simulador_MensalIPCA());
     }
 
+    
+    // Mudei o nome do método porque estava igual ao do primeiro método do Prefixo
     @Test
-    public void testPrefixado(){
+    public void testPrefixadoMensal(){
         int tempo = 6;
         Double valor = 5000.0; //Inserido mensalmente durante o periodo de tempo. 6 meses = 6 vezes.
         Double retorno = 30674.17;
