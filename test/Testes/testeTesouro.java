@@ -1,9 +1,10 @@
 package Testes;
 
 
-import Sistema.TesouroDireto;
 import org.junit.Assert;
 import org.junit.Test;
+
+import java.Sistema.TesouroDireto;
 
 /**
  * Created by adrianewey on 22/04/17.
