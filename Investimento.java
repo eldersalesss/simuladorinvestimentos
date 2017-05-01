@@ -1,73 +1,20 @@
-package Classes;
+import java.util.ArrayList;
 
-
-
-/*
- * @Gabriel Souza
+/**
+ * Created by adria on 25/04/2017.
  */
-public class Investimento {
-       private Double valor;
-       private String tipo;
-       private boolean mensal;
-       
-       
-       public Investimento (Double valor, String tipo){
-           this.valor = valor;
-           this.tipo = tipo;
-           
+public abstract class Investimento {
+    protected Double valor;
+    protected int tempo;
+    protected String tipo;
+    protected boolean mensal = false;
+
+    public Investimento(){
+
     }
 
-    /**
-     * @return the valor
-     */
-    public Double getValor() {
-        return valor;
-    }
+    protected abstract Double previsaoRetorno();
 
-    /**
-     * @param valor the valor to set
-     */
-    public void setValor(Double valor) {
-        this.valor = valor;
-    }
-
-    /**
-     * @return the tipo
-     */
-    public String getTipo() {
-        return tipo;
-    }
-
-    /**
-     * @param tipo the tipo to set
-     */
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
-    }
-
-    /**
-     * @return the mensal
-     */
-    public boolean isMensal() {
-        return mensal;
-    }
-
-    /**
-     * @param mensal the mensal to set
-     */
-    public void setMensal(boolean mensal) {
-        this.mensal = mensal;
-    }
-    
-    
-    // Métodos
-
-    public Double previsaoRetornoTesouroDireto(){
-          return 5037.21;
-      }
-  
-    public Double previsaoRetornoLCIeLCA(){
-          return 5046.01;
-      }
+    protected abstract void setMensal(boolean Mensal);
+    protected abstract void setTipo(String tipo);
 }
-
