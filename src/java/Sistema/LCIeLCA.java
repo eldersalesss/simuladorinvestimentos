@@ -11,8 +11,8 @@ public class LCIeLCA extends Investimentos{
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-    private Double taxaLCI = 0.9202;//%
-    private Double taxaLCA = 0.8912;//%
+    private Double taxaLCI;//0.9202%
+    private Double taxaLCA; //0.8912;%
     private String tipo;
     private double valor;
     private int tempo;
