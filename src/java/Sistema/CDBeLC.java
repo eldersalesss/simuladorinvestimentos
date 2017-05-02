@@ -13,20 +13,73 @@ public class CDBeLC implements Investimentos {
 
     private double taxaCDB;
     private double taxaLC;
+    private String tipo;
     private double valor;
     private int tempo;
 
     public CDBeLC(int valor, int tempo) {
         this.valor = valor;
         this.tempo = tempo;
+        this.tipo = tipo;
+    }
+
+    @Override
+    public Double previsaoRetorno() {
+        if (tipo.equalsIgnoreCase("CDB")) {
+            return simuladorCDB();
+        } else if (tipo.equalsIgnoreCase("LC")) {
+            return simuladorLC();
+        } else {
+            return null;
+        }
     }
 
     public double simuladorCDB() {
-        throw new UnsupportedOperationException("Método em desenvolvimento");
+        Double retorno = this.valor;
+
+        for (int i = 0; i < tempo; i++) {
+            retorno += ((retorno * taxaCDB) / 100);
+        }
+
+        return retorno;
     }
 
     public double simuladorLC() {
-        throw new UnsupportedOperationException("Método em desenvolvimento");
+        Double retorno = this.valor;
+
+        for (int i = 0; i < tempo; i++) {
+            retorno += ((retorno * taxaLC) / 100);
+        }
+
+        return retorno;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
+    public Double getValor() {
+        return this.valor;
+    }
+
+    public int getTempo() {
+        return this.tempo;
+    }
+
+    public Double getTaxaCDB() {
+        return taxaCDB;
+    }
+
+    public void setTaxaCDB(Double taxaCDB) {
+        this.taxaCDB = taxaCDB;
+    }
+
+    public Double getTaxaLC() {
+        return taxaLC;
+    }
+
+    public void setTaxaLC(Double taxaLC) {
+        this.taxaLC = taxaLC;
     }
 
 }
