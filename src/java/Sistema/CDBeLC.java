@@ -13,14 +13,10 @@ public class CDBeLC implements Investimentos {
 
     private double taxaCDB;
     private double taxaLC;
-    private String tipo;
-    private double valor;
-    private int tempo;
 
     public CDBeLC(int valor, int tempo) {
         this.valor = valor;
         this.tempo = tempo;
-        this.tipo = tipo;
     }
 
     @Override
