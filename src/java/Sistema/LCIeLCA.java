@@ -78,4 +78,9 @@ public class LCIeLCA extends Investimentos {
         this.taxaLCA = taxaLCA;
     }
 
+    @Override
+    public void setMensal(boolean Mensal) {
+        this.mensal = mensal;
+    }
+
 }
