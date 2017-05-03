@@ -20,10 +20,10 @@ public abstract class Investimentos {
 
     }
 
-    protected abstract Double previsaoRetorno();
+    public abstract Double previsaoRetorno();
 
-    protected abstract void setMensal(boolean Mensal);
+    public abstract void setMensal(boolean Mensal);
 
-    protected abstract void setTipo(String tipo);
+    public abstract void setTipo(String tipo);
 
 }
