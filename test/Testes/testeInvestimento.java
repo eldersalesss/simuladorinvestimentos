@@ -1,112 +1,87 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Testes;
 
+import org.junit.Assert;
 import org.junit.Test;
-import static org.junit.Assert.*;
+
+import Sistema.TesouroDireto;
+import java.text.DecimalFormat;
 
 /**
- *
- * @author asus
+ * Created by adrianewey on 22/04/17.
  */
-public class testeInvestimento {
+public class testeTesouro {
 
-    public testeInvestimento() {
-    
+    public testeTesouro() {
+
     }
-   
-   @Test    
-    public void testInvestimentoSELIC(){  
-    Double valor = 5000.0;      
-    int tempo = 1;      
-    String tipo = "SELIC";   
-    boolean mensal = false;
+
+    @Test
+    public void testSelic() {
+        int tempo = 1;
+        Double valor = 5000.0;
         Double retorno = 5037.21;
-        Investimento inv = new TesouroDireto(valor,tempo);       
-        inv.setMensal(mensal);      
-        inv.setTipo(tipo);
-        assertEquals(retorno,inv.previsaoRetorno());
+
+        TesouroDireto tesouro = new TesouroDireto(valor, tempo);
+        tesouro.setTaxaSELIC(0.7442);
+        Assert.assertEquals(retorno, tesouro.simuladorSelic());
+
     }
-    
+
     @Test
-    public void testInvestimentoIPCA(){  
-    Double valor = 5000.0;      
-    int tempo = 1;      
-    String tipo = "IPCA";   
-    boolean mensal = false;
+    public void testIPCA() {
+        int tempo = 1;
+        Double valor = 5000.0;
         Double retorno = 5030.81;
-        Investimento inv = new TesouroDireto(valor,tempo);       
-        inv.setMensal(mensal);      
-        inv.setTipo(tipo);
-        assertEquals(retorno,inv.previsaoRetorno());
+
+        TesouroDireto tesouro = new TesouroDireto(valor, tempo);
+        tesouro.setTaxaIPCA(0.6162);
+        Assert.assertEquals(retorno, tesouro.simuladorIPCA());
     }
-    
+
     @Test
-    public void testInvestimentoPREFIXADO(){  
-    Double valor = 5000.0;      
-    int tempo = 1;      
-    String tipo = "PREFIXADO";   
-    boolean mensal = false;
+    public void testPrefixado() {
+        int tempo = 1;
+        Double valor = 5000.0;
         Double retorno = 5031.67;
-        Investimento inv = new TesouroDireto(valor,tempo);       
-        inv.setMensal(mensal);      
-        inv.setTipo(tipo);
-        assertEquals(retorno,inv.previsaoRetorno());
+
+        TesouroDireto tesouro = new TesouroDireto(valor, tempo);
+        tesouro.setTaxaPrefixado(0.6334);
+        Assert.assertEquals(retorno, tesouro.simuladorPrefixado());
     }
-    
+
+    /*------Testes com entradas Mensais------*/
     @Test
-    public void testInvestimento_LCI(){      
-    Double valor = 5000.0;     
-    int tempo = 1;      
-    String tipo = "LCI";      
-    boolean mensal = false;
-        Double retorno = 5046.01;
-        Investimento inv = new LCIeLCA(valor,tempo);       
-        inv.setMensal(mensal);      
-        inv.setTipo(tipo);
-        assertEquals(retorno,inv.previsaoRetorno());
+    public void testSelicMensal() {
+        int tempo = 3;
+        Double valor = 5000.0; //Inserido mensalmente durante o periodo de tempo. 6 meses = 6 vezes.
+        Double retorno = 15224.37; // arredondou
+
+        TesouroDireto tesouro = new TesouroDireto(valor, tempo);
+        tesouro.setTaxaSELIC(0.7442);
+        DecimalFormat formato = new DecimalFormat("#.##");
+        Assert.assertEquals(retorno, Double.valueOf(formato.format(tesouro.simulador_MensalSelic())));
     }
-    
+
+    // Mudei o nome do método porque estava igual ao do primeiro método do IPCA
     @Test
-    public void testInvestimento_LCA(){      
-    Double valor = 5000.0;     
-    int tempo = 1;      
-    String tipo = "LCA";      
-    boolean mensal = false;
-        Double retorno = 5044.56;
-        Investimento inv = new LCIeLCA(valor,tempo);       
-        inv.setMensal(mensal);      
-        inv.setTipo(tipo);
-        assertEquals(retorno,inv.previsaoRetorno());
+    public void testIPCAMensal() {
+        int tempo = 6;
+        Double valor = 5000.0; //Inserido mensalmente durante o periodo de tempo. 6 meses = 6 vezes.
+        Double retorno = 30655.67;
+
+        TesouroDireto tesouro = new TesouroDireto(valor, tempo);
+        Assert.assertEquals(retorno, tesouro.simulador_MensalIPCA());
     }
-    
+
+    // Mudei o nome do método porque estava igual ao do primeiro método do Prefixo
     @Test
-    public void testInvestimento_CDB(){  
-    Double valor = 5000.0;      
-    int tempo = 1;      
-    String tipo = "CDB";   
-    boolean mensal = false;
-        Double retorno = 5044.24;
-        Investimento inv = new CDBeLC(valor,tempo);       
-        inv.setMensal(mensal);      
-        inv.setTipo(tipo);
-        assertEquals(retorno,inv.previsaoRetorno());
+    public void testPrefixadoMensal() {
+        int tempo = 6;
+        Double valor = 5000.0; //Inserido mensalmente durante o periodo de tempo. 6 meses = 6 vezes.
+        Double retorno = 30674.17;
+
+        TesouroDireto tesouro = new TesouroDireto(valor, tempo);
+        Assert.assertEquals(retorno, tesouro.simulador_MensalPrefixado());
     }
-    
-    @Test
-    public void testInvestimento_LC(){  
-    Double valor = 5000.0;      
-    int tempo = 1;      
-    String tipo = "LC";   
-    boolean mensal = false;
-        Double retorno = 5043.50;
-        Investimento inv = new CDBeLC(valor,tempo);       
-        inv.setMensal(mensal);      
-        inv.setTipo(tipo);
-        assertEquals(retorno,inv.previsaoRetorno());
-    }
-    
+
 }
