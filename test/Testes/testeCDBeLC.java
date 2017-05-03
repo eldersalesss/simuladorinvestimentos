@@ -1,12 +1,12 @@
 package Testes;
 
-import Classes.CDBeLC;
+import Sistema.CDBeLC;
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 /**
  *
- * @author Gabiel Mendonça
+ * @author Bruno/Gabiel
  */
 public class testeCDBeLC {
 
@@ -22,7 +22,9 @@ public class testeCDBeLC {
         Double retorno = 5044.24;
 //        Double retorno = 5088.99;
         CDBeLC t1 = new CDBeLC(valor, tempo);
+        t1.setTaxaCDB(0.8848);
         assertEquals(retorno, t1.simuladorCDB());
+
     }
 
     @Test
@@ -33,6 +35,7 @@ public class testeCDBeLC {
         Double retorno = 5043.50;
 //        Double retorno = 5087.48;
         CDBeLC t2 = new CDBeLC(valor, tempo);
+        t2.setTaxaLC(0.87);
         assertEquals(retorno, t2.simuladorLC());
     }
 
