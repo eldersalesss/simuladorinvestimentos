@@ -3,20 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package java.Sistema;
+package Sistema;
 
 /**
  *
  * @author Elder
  */
-public class TesouroDireto extends Investimentos{
-
+public class TesouroDireto extends Investimentos {
 
     private Double taxaSELIC;
     private Double taxaIPCA;
     private Double taxaPrefixado;
-    
-    
+
     public TesouroDireto(Double valor, int tempo) {
         this.valor = valor;
         this.tempo = tempo;
@@ -24,53 +22,61 @@ public class TesouroDireto extends Investimentos{
 
     @Override
     public Double previsaoRetorno() {
-        if(!mensal) {
-            if (tipo.equalsIgnoreCase("selic")) return simuladorSelic();
-            else if (tipo.equalsIgnoreCase("ipca")) return simuladorIPCA();
-            else if (tipo.equalsIgnoreCase("prefixado")) return simuladorPrefixado();
+        if (!mensal) {
+            if (tipo.equalsIgnoreCase("selic")) {
+                return simuladorSelic();
+            } else if (tipo.equalsIgnoreCase("ipca")) {
+                return simuladorIPCA();
+            } else if (tipo.equalsIgnoreCase("prefixado")) {
+                return simuladorPrefixado();
+            }
 
-        }else{
-            if (tipo.equalsIgnoreCase("selic")) return simulador_MensalSelic();
-            else if (tipo.equalsIgnoreCase("ipca")) return simulador_MensalIPCA();
-            else if (tipo.equalsIgnoreCase("prefixado")) return simulador_MensalPrefixado();
+        } else {
+            if (tipo.equalsIgnoreCase("selic")) {
+                return simulador_MensalSelic();
+            } else if (tipo.equalsIgnoreCase("ipca")) {
+                return simulador_MensalIPCA();
+            } else if (tipo.equalsIgnoreCase("prefixado")) {
+                return simulador_MensalPrefixado();
+            }
         }
         return null;
     }
 
-    public Double simuladorSelic(){
+    public Double simuladorSelic() {
         Double retorno = this.valor;
 
-        for(int i=0;i < tempo;i++){
+        for (int i = 0; i < tempo; i++) {
             retorno += ((retorno * taxaSELIC) / 100);
         }
 
         return retorno;
     }
 
-    public Double simuladorIPCA(){
+    public Double simuladorIPCA() {
         Double retorno = this.valor;
 
-        for(int i=0;i < tempo;i++){
+        for (int i = 0; i < tempo; i++) {
             retorno += ((retorno * taxaIPCA) / 100);
         }
 
         return retorno;
     }
 
-    public Double simuladorPrefixado(){
+    public Double simuladorPrefixado() {
         Double retorno = this.valor;
 
-        for(int i=0;i < tempo;i++){
+        for (int i = 0; i < tempo; i++) {
             retorno += ((retorno * taxaPrefixado) / 100);
         }
 
         return retorno;
     }
 
-    public Double simulador_MensalIPCA(){
+    public Double simulador_MensalIPCA() {
         Double retorno = 0.0;
 
-        for(int i=0;i < tempo;i++){
+        for (int i = 0; i < tempo; i++) {
             retorno += this.valor;
             retorno += ((retorno * taxaIPCA) / 100);
         }
@@ -78,10 +84,10 @@ public class TesouroDireto extends Investimentos{
         return retorno;
     }
 
-    public Double simulador_MensalPrefixado(){
+    public Double simulador_MensalPrefixado() {
         Double retorno = 0.0;
 
-        for(int i=0;i < tempo;i++){
+        for (int i = 0; i < tempo; i++) {
             retorno += this.valor;
             retorno += ((retorno * taxaPrefixado) / 100);
         }
@@ -89,10 +95,10 @@ public class TesouroDireto extends Investimentos{
         return retorno;
     }
 
-    public Double simulador_MensalSelic(){
+    public Double simulador_MensalSelic() {
         Double retorno = 0.0;
 
-        for(int i=0;i < tempo;i++){
+        for (int i = 0; i < tempo; i++) {
             retorno += this.valor;
             retorno += ((retorno * taxaSELIC) / 100);
         }
@@ -100,19 +106,13 @@ public class TesouroDireto extends Investimentos{
         return retorno;
     }
 
-
-
-
-
-
-    public void setMensal(boolean mensal){
+    public void setMensal(boolean mensal) {
         this.mensal = mensal;
     }
 
-    public void setTipo(String tipo){
+    public void setTipo(String tipo) {
         this.tipo = tipo;
     }
-
 
     public Double getValor() {
         return this.valor;
