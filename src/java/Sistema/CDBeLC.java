@@ -7,14 +7,14 @@ package Sistema;
 
 /**
  *
- * @author Bruno
+ * @author Bruno/Gabriel
  */
-public class CDBeLC implements Investimentos {
+public class CDBeLC extends Investimentos {
 
     private double taxaCDB;
     private double taxaLC;
 
-    public CDBeLC(int valor, int tempo) {
+    public CDBeLC(Double valor, int tempo) {
         this.valor = valor;
         this.tempo = tempo;
     }
@@ -30,7 +30,7 @@ public class CDBeLC implements Investimentos {
         }
     }
 
-    public double simuladorCDB() {
+    public Double simuladorCDB() {
         Double retorno = this.valor;
 
         for (int i = 0; i < tempo; i++) {
@@ -40,7 +40,7 @@ public class CDBeLC implements Investimentos {
         return retorno;
     }
 
-    public double simuladorLC() {
+    public Double simuladorLC() {
         Double retorno = this.valor;
 
         for (int i = 0; i < tempo; i++) {
@@ -76,6 +76,11 @@ public class CDBeLC implements Investimentos {
 
     public void setTaxaLC(Double taxaLC) {
         this.taxaLC = taxaLC;
+    }
+
+    @Override
+    public void setMensal(boolean Mensal) {
+        this.mensal = mensal;
     }
 
 }
