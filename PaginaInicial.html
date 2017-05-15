@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+       <center>
+        <form action="controle.jsp" method="POST" >
+            <h3> Investimento LCI e LCA </h3>
+            <input type="text" name ="valorInvestimento" value="" placeholder="Valor 'R$'"><br><br>
+            <select name="operacaoInvestimento">
+                <option value="lci">Investimento LCI</option>
+                <option value="lca">Investimento LCA</option>
+            </select> <br><br>
+            Escolha o tempo de duração (Mês ou Ano) <br><br>
+            <input type="text" name ="tempoMes" value="" placeholder="Mês"><br><br>
+             <input type="text" name ="tempoAno" value="" placeholder="Ano"><br><br>
+            <input type="submit" name ="btn" value="Calcular"><br><br>
+        </form>
+        </center>
+    </body>
+    
+</html>
