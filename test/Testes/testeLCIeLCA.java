@@ -1,7 +1,7 @@
-package Testes;
+package test.Testes;
 
 
-import Sistema.LCIeLCA;
+import src.java.Sistema.LCIeLCA;
 import org.junit.Test;
 import static org.junit.Assert.*;
 

@@ -3,12 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Testes;
+package test.Testes;
 
-import Sistema.CDBeLC;
-import Sistema.Investimentos;
-import Sistema.LCIeLCA;
-import Sistema.TesouroDireto;
+import src.java.Sistema.*;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -30,8 +27,10 @@ public class testeInvestimento {
         boolean mensal = false;
         Double retorno = 5037.21;
         Investimentos inv = new TesouroDireto(valor, tempo);
+
         inv.setMensal(mensal);
         inv.setTipo(tipo);
+        inv.setTaxa(0.7442);
         assertEquals(retorno, inv.previsaoRetorno());
     }
 

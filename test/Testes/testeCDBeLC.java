@@ -1,6 +1,6 @@
-package Testes;
+package test.Testes;
 
-import Sistema.CDBeLC;
+import src.java.Sistema.CDBeLC;
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 

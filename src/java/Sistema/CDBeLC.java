@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Sistema;
+package src.java.Sistema;
 
 /**
  *
@@ -52,6 +52,22 @@ public class CDBeLC extends Investimentos {
 
     public void setTipo(String tipo) {
         this.tipo = tipo;
+    }
+
+    @Override
+    public void setTaxa(Double taxa) {
+        if(this.tipo.equalsIgnoreCase("cdb")) setTaxaCDB(taxa);
+        else if(this.tipo.equalsIgnoreCase("lc")) setTaxaLC(taxa);
+    }
+
+    @Override
+    public void setValor(Double valor) {
+        this.valor = valor;
+    }
+
+    @Override
+    public void setTempo(int tempo) {
+        this.tempo = tempo;
     }
 
     public Double getValor() {

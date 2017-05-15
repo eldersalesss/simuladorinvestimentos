@@ -1,4 +1,4 @@
-package Sistema;
+package src.java.Sistema;
 
 /**
  *
@@ -13,6 +13,10 @@ public class LCIeLCA extends Investimentos {
      */
     private Double taxaLCI;//0.9202%
     private Double taxaLCA; //0.8912;%
+
+    public LCIeLCA(){
+
+    }
 
     public LCIeLCA(Double valor, int tempo) {
         this.valor = valor;
@@ -52,6 +56,22 @@ public class LCIeLCA extends Investimentos {
 
     public void setTipo(String tipo) {
         this.tipo = tipo;
+    }
+
+    @Override
+    public void setTaxa(Double taxa) {
+        if(this.tipo.equalsIgnoreCase("lci")) setTaxaLCI(taxa);
+        else if(this.tipo.equalsIgnoreCase("lca")) setTaxaLCA(taxa);
+    }
+
+    @Override
+    public void setValor(Double valor) {
+        this.valor = valor;
+    }
+
+    @Override
+    public void setTempo(int tempo) {
+        this.tempo = tempo;
     }
 
     public Double getValor() {

@@ -1,9 +1,9 @@
-package Testes;
+package test.Testes;
 
 import org.junit.Assert;
 import org.junit.Test;
 
-import Sistema.TesouroDireto;
+import src.java.Sistema.TesouroDireto;
 import java.text.DecimalFormat;
 
 /**

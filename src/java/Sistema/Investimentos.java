@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Sistema;
+package src.java.Sistema;
 
 /**
  *
@@ -25,5 +25,13 @@ public abstract class Investimentos {
     public abstract void setMensal(boolean Mensal);
 
     public abstract void setTipo(String tipo);
+
+    public abstract void setTaxa(Double taxa);
+
+    public abstract void setValor(Double valor);
+
+    public abstract void setTempo(int tempo);
+
+    public abstract Double getValor();
 
 }

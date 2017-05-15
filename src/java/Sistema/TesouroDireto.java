@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Sistema;
+package src.java.Sistema;
 
 /**
  *
@@ -15,6 +15,9 @@ public class TesouroDireto extends Investimentos {
     private Double taxaIPCA;
     private Double taxaPrefixado;
 
+    public TesouroDireto(){
+
+    }
     public TesouroDireto(Double valor, int tempo) {
         this.valor = valor;
         this.tempo = tempo;
@@ -104,6 +107,22 @@ public class TesouroDireto extends Investimentos {
         }
 
         return retorno;
+    }
+
+    public void setTaxa(Double taxa){
+        if(tipo.equalsIgnoreCase("selic")) setTaxaSELIC(taxa);
+        else if(tipo.equalsIgnoreCase("ipca")) setTaxaIPCA(taxa);
+        else if(tipo.equalsIgnoreCase("prefixado")) setTaxaPrefixado(taxa);
+    }
+
+    @Override
+    public void setValor(Double valor) {
+        this.valor = valor;
+    }
+
+    @Override
+    public void setTempo(int tempo) {
+        this.tempo = tempo;
     }
 
     public void setMensal(boolean mensal) {
