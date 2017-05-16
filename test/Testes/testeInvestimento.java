@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package test.Testes;
+package Testes;
 
+import src.java.Sistema.LCIeLCA;
 import src.java.Sistema.*;
 import org.junit.Test;
 import static org.junit.Assert.*;

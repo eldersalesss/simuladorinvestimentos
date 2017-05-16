@@ -1,4 +1,4 @@
-package test.Testes;
+package Testes;
 
 
 import src.java.Sistema.LCIeLCA;
