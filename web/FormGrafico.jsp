@@ -37,6 +37,36 @@
 //    out.println(e);
 //}
 
+// double[][] dafo = new double[][]{
+//  {210, 300, 320, 265, 299},
+//  {200, 304, 201, 201, 340}
+//  };
+
+// GRAFICO MODELO AREA
+// CategoryDataset novoDado = DatasetUtilities.createCategoryDataset(
+//  "Simulador", "", dado);
+//
+// JFreeChart grafico = ChartFactory.createAreaChart(
+//  "Silumação", "", "Valor", novoDado, 
+//   PlotOrientation.VERTICAL,
+//  true, true, false);
+//
+// CategoryPlot plot = grafico.getCategoryPlot();
+// plot.setForegroundAlpha(0.5f);
+//
+// grafico.setBackgroundPaint(new Color(249, 231, 236));
+//
+//try {
+//ChartRenderingInfo info = new ChartRenderingInfo(new StandardEntityCollection());
+//
+//File imagem = new File(
+//        "D:/Ciência da Computação/Arquivo/ProjetosNetbeans/simuladorinvestimentos/web/FormGrafico.png");
+//ChartUtilities.saveChartAsPNG(imagem, grafico, 600, 400, info);
+//}
+//catch (Exception e) {
+//    out.println(e);
+//}
+
 
 //GRAFICO MODELO BARRAS
 double poupanca = 5100.2;
