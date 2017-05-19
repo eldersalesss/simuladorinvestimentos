@@ -4,7 +4,7 @@
     Author     : Elder
 --%>
 
-<%@page import="java.util.ArrayList"%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ page  import="java.awt.*" %>
 <%@ page  import="java.io.*" %>
@@ -20,23 +20,46 @@
 <!DOCTYPE html>
 
 <%
-    
-DefaultPieDataset dado = new DefaultPieDataset();
-dado.setValue("Poupança", new Double(5100.2));
-dado.setValue("Investimento", new Double(5300.0));
-JFreeChart grafico = ChartFactory.createPieChart("Simulador de Investimentos", dado, true, true, false);
+//GRAFICO MODELO PIZZA
+//DefaultPieDataset dado = new DefaultPieDataset();
+//dado.setValue("Poupança", new Double(5100.2));
+//dado.setValue("Investimento", new Double(5300.0));
+//JFreeChart grafico = ChartFactory.createPieChart("Simulador de Investimentos", dado, true, true, false);
+//
+//try {
+//ChartRenderingInfo info = new ChartRenderingInfo(new StandardEntityCollection());
+//
+//File imagem = new File(
+//        "D:/Ciência da Computação/Arquivo/ProjetosNetbeans/simuladorinvestimentos/web/FormGrafico.png");
+//ChartUtilities.saveChartAsPNG(imagem, grafico, 600, 400, info);
+//}
+//catch (Exception e) {
+//    out.println(e);
+//}
+
+
+//GRAFICO MODELO BARRAS
+double poupanca = 5100.2;
+double investimento = 5300.5;
+String poupancaS = String.valueOf(poupanca); 
+String investimentoS = String.valueOf(investimento);
+
+DefaultCategoryDataset dado = new DefaultCategoryDataset();
+dado.setValue(poupanca, "Poupança", poupancaS);
+dado.setValue(investimento, "Investimento", investimentoS);
+JFreeChart grafico = ChartFactory.createBarChart(
+        "Simulação","Investimentos","Valor (R$)", dado,PlotOrientation.VERTICAL ,true, true, true);
 
 try {
 ChartRenderingInfo info = new ChartRenderingInfo(new StandardEntityCollection());
 
 File imagem = new File(
-        "D:/Ciência da Computação/Arquivo/ProjetosNetbeans/simuladorinvestimentos/web/FormGrafico.png");
-ChartUtilities.saveChartAsPNG(imagem, grafico, 600, 400, info);
+    "D:/Ciência da Computação/Arquivo/ProjetosNetbeans/simuladorinvestimentos/web/FormGrafico.png");
+ChartUtilities.saveChartAsPNG(imagem, grafico, 300, 300, info);
 }
 catch (Exception e) {
     out.println(e);
 }
-
 
 %>
 
@@ -46,7 +69,7 @@ catch (Exception e) {
         <title>JSP Page</title>
     </head>
     <body>
-        <IMG SRC="FormGrafico.png" WIDTH="600" HEIGHT="400" BORDER="0" 
+        <IMG SRC="FormGrafico.png" WIDTH="300" HEIGHT="300" BORDER="0" 
    USEMAP="#grafico">
     </body>
 </html>
