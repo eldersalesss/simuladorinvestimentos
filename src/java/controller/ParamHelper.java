@@ -6,22 +6,24 @@ package src.java.controller;
 
 public class ParamHelper {
 
-    private int tempo;
     private Double valor;
     private String tipo;
-    private boolean mensal=false;
+    private String mensal="false";
     private String classe;
+    private int tempoAno;
+    private int tempoMes;
+
 
     public ParamHelper(){
 
     }
 
     public int getTempo() {
-        return tempo;
-    }
+        if(tempoAno > 0 && tempoAno != 0) {
+            return tempoAno * 12;
+        }
 
-    public void setTempo(int tempo) {
-        this.tempo = tempo;
+        else return tempoMes;
     }
 
     public Double getValor() {
@@ -40,11 +42,11 @@ public class ParamHelper {
         this.tipo = tipo;
     }
 
-    public boolean isMensal() {
+    public String getMensal() {
         return mensal;
     }
 
-    public void setMensal(boolean mensal) {
+    public void setMensal(String mensal) {
         this.mensal = mensal;
     }
 
@@ -54,5 +56,21 @@ public class ParamHelper {
 
     public void setClasse(String classe) {
         this.classe = classe;
+    }
+    
+    public int getTempoAno() {
+        return tempoAno;
+    }
+
+    public void setTempoAno(int tempoAno) {
+        this.tempoAno = tempoAno;
+    }
+
+    public int getTempoMes() {
+        return tempoMes;
+    }
+
+    public void setTempoMes(int tempoMes) {
+        this.tempoMes = tempoMes;
     }
 }
