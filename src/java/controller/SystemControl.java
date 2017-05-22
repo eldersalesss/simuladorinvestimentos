@@ -5,24 +5,26 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.portlet.ModelAndView;
 import src.java.Sistema.Investimentos;
+import src.java.Sistema.Resultado;
 
 import javax.servlet.http.HttpServlet;
+import java.util.ArrayList;
 
 /**
  * Created by adrianewey on 15/05/17.
  */
 @Controller
 public class SystemControl{
+    private static Resultado resultado;
 
     @RequestMapping("index")
     public String indexReturn(){
-        return "formulario/TD";
+        return "main";
     }
 
 
     @RequestMapping("calcular")
     public String identificarClasse(ParamHelper paramHelper,Model model){
-        System.out.println(paramHelper.getClasse());
 
         String nomeDaClasse = "src.java.Sistema." + paramHelper.getClasse();
 
@@ -34,13 +36,12 @@ public class SystemControl{
             ActionHelper actionHelper = new ActionHelper();
             actionHelper.convertInvestimento(investimentos,paramHelper);
 
-         /*   ModelAndView mav = new ModelAndView("formulario/resultado");
-            mav.addObject("retornoInvestimento",actionHelper.caculated(investimentos));*/
+        
+            resultado = actionHelper.caculated(investimentos);
 
+            model.addAttribute("resultado",resultado.getSaldoMensal());
 
-            System.out.println("\n\n"+actionHelper.caculated(investimentos));
-            model.addAttribute("retornoInvestimento",actionHelper.caculated(investimentos));
-            return "formulario/resultado";
+            return "forms/resultado";
 
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
@@ -53,8 +54,33 @@ public class SystemControl{
         return null;
     }
 
+   @RequestMapping("doChart")
+    public String doChart(Model model){
+        model.addAttribute("saldoMensal",resultado.getSaldoMensal());
+        model.addAttribute("adicionado",resultado.getAdicionado());
+        model.addAttribute("mensal",resultado.getMensal());
+        model.addAttribute("saldoAtual",resultado.getSaldoAtual());
+        model.addAttribute("diferenca",resultado.getDiferencaMensal());
+        return "chart";
+    }
 
+    @RequestMapping("doTable")
+    public String doTable(Model model){
+        model.addAttribute("saldoMensal",resultado.getSaldoMensal());
+        model.addAttribute("adicionado",resultado.getAdicionado());
+        model.addAttribute("mensal",resultado.getMensal());
+        model.addAttribute("saldoAtual",resultado.getSaldoAtual());
+        model.addAttribute("diferenca",resultado.getDiferencaMensal());
+        return "table";
+    }
 
-
-
+    @RequestMapping("doTableDetail")
+    public String doTableDetail(Model model){
+        model.addAttribute("saldoMensal",resultado.getSaldoMensal());
+        model.addAttribute("adicionado",resultado.getAdicionado());
+        model.addAttribute("mensal",resultado.getMensal());
+        model.addAttribute("saldoAtual",resultado.getSaldoAtual());
+        model.addAttribute("diferenca",resultado.getDiferencaMensal());
+        return "tableDetalhada";
+    }
 }
