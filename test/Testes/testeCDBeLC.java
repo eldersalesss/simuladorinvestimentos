@@ -1,4 +1,4 @@
-package test.Testes;
+package Testes;
 
 import src.java.Sistema.CDBeLC;
 import static org.junit.Assert.assertEquals;
