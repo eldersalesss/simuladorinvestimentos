@@ -14,15 +14,15 @@ public abstract class Investimentos {
     protected Double valor;
     protected int tempo;
     protected String tipo;
-    protected boolean mensal = false;
+    protected String mensal = "false";
 
     public Investimentos() {
 
     }
 
-    public abstract Double previsaoRetorno();
+    public abstract Resultado previsaoRetorno();
 
-    public abstract void setMensal(boolean Mensal);
+    public abstract void setMensal(String Mensal);
 
     public abstract void setTipo(String tipo);
 

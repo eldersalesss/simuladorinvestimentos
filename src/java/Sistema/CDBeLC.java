@@ -1,9 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package src.java.Sistema;
+
+import java.text.DecimalFormat;
+import java.util.ArrayList;
 
 /**
  *
@@ -13,6 +11,10 @@ public class CDBeLC extends Investimentos {
 
     private double taxaCDB;
     private double taxaLC;
+    private DecimalFormat form = new DecimalFormat("#.##");
+    public CDBeLC(){
+
+    }
 
     public CDBeLC(Double valor, int tempo) {
         this.valor = valor;
@@ -20,7 +22,7 @@ public class CDBeLC extends Investimentos {
     }
 
     @Override
-    public Double previsaoRetorno() {
+    public Resultado previsaoRetorno() {
         if (tipo.equalsIgnoreCase("CDB")) {
             return simuladorCDB();
         } else if (tipo.equalsIgnoreCase("LC")) {
@@ -30,24 +32,51 @@ public class CDBeLC extends Investimentos {
         }
     }
 
-    public Double simuladorCDB() {
+    public Resultado simuladorCDB() {
         Double retorno = this.valor;
+        Double diferenca= 0.0;
+        ArrayList<Double> saldoAtual = new ArrayList<>();
+        ArrayList<Double> saldoMensal = new ArrayList<>();
+        ArrayList<Double> diferencaMensal = new ArrayList<>();
+
+
 
         for (int i = 0; i < tempo; i++) {
-            retorno += ((retorno * taxaCDB) / 100);
+            saldoAtual.add(Double.parseDouble(form.format(retorno).replace(',','.')));
+
+            diferenca = ((retorno * taxaCDB) / 100);
+            retorno += diferenca;
+
+            saldoMensal.add(Double.parseDouble(form.format(retorno).replace(',','.')));
+            diferencaMensal.add(Double.parseDouble(form.format(diferenca).replace(',','.')));
         }
 
-        return retorno;
+
+        Resultado resultado = new Resultado(saldoAtual,diferencaMensal,saldoMensal,this.valor);
+        return resultado;
     }
 
-    public Double simuladorLC() {
+    public Resultado simuladorLC() {
         Double retorno = this.valor;
+        Double diferenca= 0.0;
+        ArrayList<Double> saldoAtual = new ArrayList<>();
+        ArrayList<Double> saldoMensal = new ArrayList<>();
+        ArrayList<Double> diferencaMensal = new ArrayList<>();
+
 
         for (int i = 0; i < tempo; i++) {
-            retorno += ((retorno * taxaLC) / 100);
+            saldoAtual.add(Double.parseDouble(form.format(retorno).replace(',','.')));
+
+            diferenca = ((retorno * taxaLC) / 100);
+            retorno += diferenca;
+
+            saldoMensal.add(Double.parseDouble(form.format(retorno).replace(',','.')));
+            diferencaMensal.add(Double.parseDouble(form.format(diferenca).replace(',','.')));
         }
 
-        return retorno;
+
+        Resultado resultado = new Resultado(saldoAtual,diferencaMensal,saldoMensal,this.valor);
+        return resultado;
     }
 
     public void setTipo(String tipo) {
@@ -69,6 +98,7 @@ public class CDBeLC extends Investimentos {
     public void setTempo(int tempo) {
         this.tempo = tempo;
     }
+
 
     public Double getValor() {
         return this.valor;
@@ -95,7 +125,7 @@ public class CDBeLC extends Investimentos {
     }
 
     @Override
-    public void setMensal(boolean Mensal) {
+    public void setMensal(String Mensal) {
         this.mensal = mensal;
     }
 
