@@ -5,6 +5,9 @@
  */
 package src.java.Sistema;
 
+import java.text.DecimalFormat;
+import java.util.ArrayList;
+
 /**
  *
  * @author Elder
@@ -14,6 +17,7 @@ public class TesouroDireto extends Investimentos {
     private Double taxaSELIC;
     private Double taxaIPCA;
     private Double taxaPrefixado;
+    private DecimalFormat form = new DecimalFormat("#.##");
 
     public TesouroDireto(){
 
@@ -24,8 +28,8 @@ public class TesouroDireto extends Investimentos {
     }
 
     @Override
-    public Double previsaoRetorno() {
-        if (!mensal) {
+    public Resultado previsaoRetorno() {
+        if (this.mensal.equalsIgnoreCase("false")) {
             if (tipo.equalsIgnoreCase("selic")) {
                 return simuladorSelic();
             } else if (tipo.equalsIgnoreCase("ipca")) {
@@ -46,67 +50,136 @@ public class TesouroDireto extends Investimentos {
         return null;
     }
 
-    public Double simuladorSelic() {
+    public Resultado simuladorSelic() {
         Double retorno = this.valor;
+        Double diferenca= 0.0;
+        ArrayList<Double> saldoAtual = new ArrayList<>();
+        ArrayList<Double> saldoMensal = new ArrayList<>();
+        ArrayList<Double> diferencaMensal = new ArrayList<>();
+
 
         for (int i = 0; i < tempo; i++) {
-            retorno += ((retorno * taxaSELIC) / 100);
+            saldoAtual.add(Double.parseDouble(form.format(retorno).replace(',','.')));
+
+            diferenca = ((retorno * taxaSELIC) / 100);
+            retorno += diferenca;
+
+            saldoMensal.add(Double.parseDouble(form.format(retorno).replace(',','.')));
+            diferencaMensal.add(Double.parseDouble(form.format(diferenca).replace(',','.')));
         }
 
-        return retorno;
+
+        Resultado resultado = new Resultado(saldoAtual,diferencaMensal,saldoMensal,this.valor);
+        return resultado;
     }
 
-    public Double simuladorIPCA() {
+    public Resultado simuladorIPCA() {
         Double retorno = this.valor;
+        Double diferenca= 0.0;
+        ArrayList<Double> saldoAtual = new ArrayList<>();
+        ArrayList<Double> saldoMensal = new ArrayList<>();
+        ArrayList<Double> diferencaMensal = new ArrayList<>();
 
         for (int i = 0; i < tempo; i++) {
-            retorno += ((retorno * taxaIPCA) / 100);
+            saldoAtual.add(Double.parseDouble(form.format(retorno).replace(',','.')));
+
+            diferenca = ((retorno * taxaIPCA) / 100);
+            retorno += diferenca;
+
+            saldoMensal.add(Double.parseDouble(form.format(retorno).replace(',','.')));
+            diferencaMensal.add(Double.parseDouble(form.format(diferenca).replace(',','.')));
         }
 
-        return retorno;
+        Resultado resultado = new Resultado(saldoAtual,diferencaMensal,saldoMensal,this.valor);
+        return resultado;
     }
 
-    public Double simuladorPrefixado() {
+    public Resultado simuladorPrefixado() {
         Double retorno = this.valor;
+        Double diferenca= 0.0;
+        ArrayList<Double> saldoAtual = new ArrayList<>();
+        ArrayList<Double> saldoMensal = new ArrayList<>();
+        ArrayList<Double> diferencaMensal = new ArrayList<>();
+
 
         for (int i = 0; i < tempo; i++) {
-            retorno += ((retorno * taxaPrefixado) / 100);
+            saldoAtual.add(Double.parseDouble(form.format(retorno).replace(',','.')));
+
+            diferenca = ((retorno * taxaPrefixado) / 100);
+            retorno += diferenca;
+
+            saldoMensal.add(Double.parseDouble(form.format(retorno).replace(',','.')));
+            diferencaMensal.add(Double.parseDouble(form.format(diferenca).replace(',','.')));
         }
 
-        return retorno;
+        Resultado resultado = new Resultado(saldoAtual,diferencaMensal,saldoMensal,this.valor);
+        return resultado;
     }
 
-    public Double simulador_MensalIPCA() {
+    public Resultado simulador_MensalIPCA() {
         Double retorno = 0.0;
+        Double diferenca= 0.0;
+        ArrayList<Double> saldoAtual = new ArrayList<>();
+        ArrayList<Double> saldoMensal = new ArrayList<>();
+        ArrayList<Double> diferencaMensal = new ArrayList<>();
 
         for (int i = 0; i < tempo; i++) {
             retorno += this.valor;
-            retorno += ((retorno * taxaIPCA) / 100);
+            saldoAtual.add(Double.parseDouble(form.format(retorno).replace(',','.')));
+            diferenca = ((retorno * taxaIPCA) / 100);
+            retorno += diferenca;
+
+            saldoMensal.add(Double.parseDouble(form.format(retorno).replace(',','.')));
+            diferencaMensal.add(Double.parseDouble(form.format(diferenca).replace(',','.')));
         }
 
-        return retorno;
+        Resultado resultado = new Resultado(saldoAtual,diferencaMensal,saldoMensal,this.valor);
+        resultado.setMensal("true");
+        return resultado;
     }
 
-    public Double simulador_MensalPrefixado() {
+    public Resultado simulador_MensalPrefixado() {
         Double retorno = 0.0;
+        Double diferenca= 0.0;
+        ArrayList<Double> saldoAtual = new ArrayList<>();
+        ArrayList<Double> saldoMensal = new ArrayList<>();
+        ArrayList<Double> diferencaMensal = new ArrayList<>();
 
         for (int i = 0; i < tempo; i++) {
             retorno += this.valor;
-            retorno += ((retorno * taxaPrefixado) / 100);
+            saldoAtual.add(Double.parseDouble(form.format(retorno).replace(',','.')));
+            diferenca = ((retorno * taxaPrefixado) / 100);
+            retorno += diferenca;
+
+            saldoMensal.add(Double.parseDouble(form.format(retorno).replace(',','.')));
+            diferencaMensal.add(Double.parseDouble(form.format(diferenca).replace(',','.')));
         }
 
-        return retorno;
+        Resultado resultado = new Resultado(saldoAtual,diferencaMensal,saldoMensal,this.valor);
+        resultado.setMensal("true");
+        return resultado;
     }
 
-    public Double simulador_MensalSelic() {
+    public Resultado simulador_MensalSelic() {
         Double retorno = 0.0;
+        Double diferenca= 0.0;
+        ArrayList<Double> saldoAtual = new ArrayList<>();
+        ArrayList<Double> saldoMensal = new ArrayList<>();
+        ArrayList<Double> diferencaMensal = new ArrayList<>();
 
         for (int i = 0; i < tempo; i++) {
             retorno += this.valor;
-            retorno += ((retorno * taxaSELIC) / 100);
+            saldoAtual.add(Double.parseDouble(form.format(retorno).replace(',','.')));
+            diferenca = ((retorno * taxaSELIC) / 100);
+            retorno += diferenca;
+
+            saldoMensal.add(Double.parseDouble(form.format(retorno).replace(',','.')));
+            diferencaMensal.add(Double.parseDouble(form.format(diferenca).replace(',','.')));
         }
 
-        return retorno;
+        Resultado resultado = new Resultado(saldoAtual,diferencaMensal,saldoMensal,this.valor);
+        resultado.setMensal("true");
+        return resultado;
     }
 
     public void setTaxa(Double taxa){
@@ -125,7 +198,8 @@ public class TesouroDireto extends Investimentos {
         this.tempo = tempo;
     }
 
-    public void setMensal(boolean mensal) {
+
+    public void setMensal(String mensal) {
         this.mensal = mensal;
     }
 
