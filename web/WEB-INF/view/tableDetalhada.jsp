@@ -11,10 +11,10 @@
     <thead>
     <tr>
         <th>Mês</th>
-        <th>Valor acrescentado</th>
+        <th>Valor Acrescentado</th>
         <th>Saldo</th>
-        <th>Lucro obtido</th>
-        <th>Soma total</th>
+        <th>Lucro Obtido</th>
+        <th>Soma Total</th>
     </tr>
     </thead>
     <tbody>
