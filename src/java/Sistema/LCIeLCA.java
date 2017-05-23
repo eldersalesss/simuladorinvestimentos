@@ -1,5 +1,8 @@
 package src.java.Sistema;
 
+import java.text.DecimalFormat;
+import java.util.ArrayList;
+
 /**
  *
  * @author Thauan
@@ -13,6 +16,7 @@ public class LCIeLCA extends Investimentos {
      */
     private Double taxaLCI;//0.9202%
     private Double taxaLCA; //0.8912;%
+    private DecimalFormat form = new DecimalFormat("#.##");
 
     public LCIeLCA(){
 
@@ -24,7 +28,7 @@ public class LCIeLCA extends Investimentos {
     }
 
     @Override
-    public Double previsaoRetorno() {
+    public Resultado previsaoRetorno() {
         if (tipo.equalsIgnoreCase("LCI")) {
             return simuladorLCI();
         } else if (tipo.equalsIgnoreCase("LCA")) {
@@ -34,24 +38,50 @@ public class LCIeLCA extends Investimentos {
         }
     }
 
-    public Double simuladorLCI() {
+    public Resultado simuladorLCI() {
         Double retorno = this.valor;
+        Double diferenca= 0.0;
+        ArrayList<Double> saldoAtual = new ArrayList<>();
+        ArrayList<Double> saldoMensal = new ArrayList<>();
+        ArrayList<Double> diferencaMensal = new ArrayList<>();
+
 
         for (int i = 0; i < tempo; i++) {
-            retorno += ((retorno * taxaLCI) / 100);
+            saldoAtual.add(Double.parseDouble(form.format(retorno).replace(',','.')));
+
+            diferenca = ((retorno * taxaLCI) / 100);
+            retorno += diferenca;
+
+            saldoMensal.add(Double.parseDouble(form.format(retorno).replace(',','.')));
+            diferencaMensal.add(Double.parseDouble(form.format(diferenca).replace(',','.')));
         }
 
-        return retorno;
+
+        Resultado resultado = new Resultado(saldoAtual,diferencaMensal,saldoMensal,this.valor);
+        return resultado;
     }
 
-    public Double simuladorLCA() {
+    public Resultado simuladorLCA() {
         Double retorno = this.valor;
+        Double diferenca= 0.0;
+        ArrayList<Double> saldoAtual = new ArrayList<>();
+        ArrayList<Double> saldoMensal = new ArrayList<>();
+        ArrayList<Double> diferencaMensal = new ArrayList<>();
+
 
         for (int i = 0; i < tempo; i++) {
-            retorno += ((retorno * taxaLCA) / 100);
+            saldoAtual.add(Double.parseDouble(form.format(retorno).replace(',','.')));
+
+            diferenca = ((retorno * taxaLCA) / 100);
+            retorno += diferenca;
+
+            saldoMensal.add(Double.parseDouble(form.format(retorno).replace(',','.')));
+            diferencaMensal.add(Double.parseDouble(form.format(diferenca).replace(',','.')));
         }
 
-        return retorno;
+
+        Resultado resultado = new Resultado(saldoAtual,diferencaMensal,saldoMensal,this.valor);
+        return resultado;
     }
 
     public void setTipo(String tipo) {
@@ -73,6 +103,7 @@ public class LCIeLCA extends Investimentos {
     public void setTempo(int tempo) {
         this.tempo = tempo;
     }
+
 
     public Double getValor() {
         return this.valor;
@@ -99,7 +130,7 @@ public class LCIeLCA extends Investimentos {
     }
 
     @Override
-    public void setMensal(boolean Mensal) {
+    public void setMensal(String Mensal) {
         this.mensal = mensal;
     }
 
