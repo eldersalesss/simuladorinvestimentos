@@ -1,3 +1,86 @@
+
+
+
+<!--Edited by Elder-->
+<section id="taxas">
+    <nav class="uk-background-muted">
+        <div class="container">
+            <div class="row" id="row-investimento">
+                <div class="col-md-4 text-center col-md-offset-4" id="colum-investimento" uk-scrollspy="cls:uk-animation-fade">
+                    <i class="material-icons md-96">trending_up</i>
+                    <h3>Investimentos</h3>
+                    <p>Confira como funciona cada investimento e saiba qual é o ideal para sua escolha.</p>
+                    <a id="btn-investimentos" class="waves-effect waves-light btn" uk-scrollspy="cls:uk-animation-slide-left-medium">Confira</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <nav id="segundo-divisor" class="divisor">
+        <div class="uk-divider-icon divisor">
+        </div>
+    </nav>
+    <nav id="nav-taxa" class="uk-background-muted">
+        <div class="container">
+            <div class="row" id="row-taxa">
+                <div class="col-md-4 col-md-offset-4 text-center">
+                    <i class="material-icons md-96" uk-scrollspy="cls:uk-animation-slide-right">attach_money</i>
+                    <h3>Taxas</h3>
+                    <p>Veja a tabela de taxas dos investimentos</p>
+                </div>
+                <div class="col-md-6 col-md-offset-3 table-taxa" uk-scrollspy="cls:uk-animation-fade">
+                    <div class="table-responsive">
+                        <table class="table text-center">
+                            <thead>
+                            <tr>
+                                <th class="text-center">Investimentos</th>
+                                <th class="text-center">Taxas(%)</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>Selic</td>
+                                <td>Mark</td>
+                            </tr>
+                            <tr>
+                                <td>IPCA</td>
+                                <td>Jacob</td>
+                            </tr>
+                            <tr>
+                                <td>Prefixado</td>
+                                <td>Larry</td>
+                            </tr>
+                            <tr class="table-separador">
+                                <td>LCI</td>
+                                <td>Larry</td>
+                            </tr>
+                            <tr>
+                                <td>LCA</td>
+                                <td>Larry</td>
+                            </tr>
+                            <tr class="table-separador">
+                                <td>CDB</td>
+                                <td>Larry</td>
+                            </tr>
+                            <tr>
+                                <td>LC</td>
+                                <td>Larry</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</section>
+<nav id="terceiro-divisor" class="divisor">
+    <div class="uk-divider-icon divisor">
+    </div>
+</nav>
+
+
+
+
 <section id="resultado" class="uk-background-secondary">
     <div class="container">
         <div class="row">
