@@ -27,6 +27,12 @@ public class ActionHelper {
                 inv.setTaxa(0.6162);
             } else if (pam.getTipo().equalsIgnoreCase("prefixado")) {
                 inv.setTaxa(0.6334);
+            }else if(pam.getTipo().equalsIgnoreCase("anual.selic")){
+                inv.setTaxa(0.7442);
+            }else if(pam.getTipo().equalsIgnoreCase("anual.ipca")){
+                inv.setTaxa(0.6162);
+            }else if(pam.getTipo().equalsIgnoreCase("anual.prefixado")){
+                inv.setTaxa(0.6334);
             }
         }
         else if(pam.getClasse().equalsIgnoreCase("LCIeLCA")){
@@ -34,12 +40,20 @@ public class ActionHelper {
                 inv.setTaxa(0.9202);
             } else if (pam.getTipo().equalsIgnoreCase("lca")) {
                 inv.setTaxa(0.8912);
+            }else if(pam.getTipo().equalsIgnoreCase("anual.lci")){
+                inv.setTaxa(0.9202);
+            }else if(pam.getTipo().equalsIgnoreCase("anual.lca")){
+                inv.setTaxa(0.8912);
             }
         }
         else if(pam.getClasse().equalsIgnoreCase("CDBeLC")){
             if (pam.getTipo().equalsIgnoreCase("cdb")) {
                 inv.setTaxa(0.8848);
             } else if (pam.getTipo().equalsIgnoreCase("lc")) {
+                inv.setTaxa(0.87);
+            }else if(pam.getTipo().equalsIgnoreCase("anual.cdb")){
+                inv.setTaxa(0.8848);
+            }else if(pam.getTipo().equalsIgnoreCase("anual.lc")){
                 inv.setTaxa(0.87);
             }
         }
