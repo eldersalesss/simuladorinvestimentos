@@ -1,7 +1,8 @@
-package test.Testes;
+package Testes;
 
-import src.java.Sistema.CDBeLC;
 import static org.junit.Assert.assertEquals;
+
+import fidape.Sistema.CDBeLC;
 import org.junit.Test;
 
 /**
@@ -20,8 +21,9 @@ public class testeCDBeLC {
         Double valor = 5000.0;
         Double retorno = 5044.24;
         CDBeLC t1 = new CDBeLC(valor, tempo);
+        t1.setTipo("cdb");
         t1.setTaxaCDB(0.8848);
-        assertEquals(retorno, t1.simuladorCDB());
+        assertEquals(retorno, t1.simularTest());
 
     }
 
@@ -31,8 +33,9 @@ public class testeCDBeLC {
         Double valor = 5000.0;
         Double retorno = 5043.50;
         CDBeLC t2 = new CDBeLC(valor, tempo);
+        t2.setTipo("lc");
         t2.setTaxaLC(0.87);
-        assertEquals(retorno, t2.simuladorLC());
+        assertEquals(retorno, t2.simularTest());
     }
 
 }

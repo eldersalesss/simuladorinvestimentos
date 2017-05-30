@@ -3,9 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package test.Testes;
+package Testes;
 
-import src.java.Sistema.*;
+
+import fidape.Sistema.CDBeLC;
+import fidape.Sistema.Investimentos;
+import fidape.Sistema.LCIeLCA;
+import fidape.Sistema.TesouroDireto;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -24,14 +28,14 @@ public class testeInvestimento {
         Double valor = 5000.0;
         int tempo = 1;
         String tipo = "SELIC";
-        boolean mensal = false;
+        String mensal = "false";
         Double retorno = 5037.21;
         Investimentos inv = new TesouroDireto(valor, tempo);
 
         inv.setMensal(mensal);
         inv.setTipo(tipo);
         inv.setTaxa(0.7442);
-        assertEquals(retorno, inv.previsaoRetorno());
+        assertEquals(retorno, inv.simularTest());
     }
 
     @Test
@@ -39,12 +43,13 @@ public class testeInvestimento {
         Double valor = 5000.0;
         int tempo = 1;
         String tipo = "IPCA";
-        boolean mensal = false;
+        String mensal = "false";
         Double retorno = 5030.81;
         Investimentos inv = new TesouroDireto(valor, tempo);
         inv.setMensal(mensal);
         inv.setTipo(tipo);
-        assertEquals(retorno, inv.previsaoRetorno());
+        inv.setTaxa(0.6162);
+        assertEquals(retorno, inv.simularTest());
     }
 
     @Test
@@ -52,12 +57,13 @@ public class testeInvestimento {
         Double valor = 5000.0;
         int tempo = 1;
         String tipo = "PREFIXADO";
-        boolean mensal = false;
+        String mensal = "false";
         Double retorno = 5031.67;
         Investimentos inv = new TesouroDireto(valor, tempo);
         inv.setMensal(mensal);
         inv.setTipo(tipo);
-        assertEquals(retorno, inv.previsaoRetorno());
+        inv.setTaxa(0.6334);
+        assertEquals(retorno, inv.simularTest());
     }
 
     @Test
@@ -65,12 +71,13 @@ public class testeInvestimento {
         Double valor = 5000.0;
         int tempo = 1;
         String tipo = "LCI";
-        boolean mensal = false;
+        String mensal = "false";
         Double retorno = 5046.01;
         Investimentos inv = new LCIeLCA(valor, tempo);
         inv.setMensal(mensal);
         inv.setTipo(tipo);
-        assertEquals(retorno, inv.previsaoRetorno());
+        inv.setTaxa(0.9202);
+        assertEquals(retorno, inv.simularTest());
     }
 
     @Test
@@ -78,12 +85,13 @@ public class testeInvestimento {
         Double valor = 5000.0;
         int tempo = 1;
         String tipo = "LCA";
-        boolean mensal = false;
+        String mensal = "false";
         Double retorno = 5044.56;
         Investimentos inv = new LCIeLCA(valor, tempo);
         inv.setMensal(mensal);
         inv.setTipo(tipo);
-        assertEquals(retorno, inv.previsaoRetorno());
+        inv.setTaxa(0.8912);
+        assertEquals(retorno, inv.simularTest());
     }
 
     @Test
@@ -91,12 +99,13 @@ public class testeInvestimento {
         Double valor = 5000.0;
         int tempo = 1;
         String tipo = "CDB";
-        boolean mensal = false;
+        String mensal = "false";
         Double retorno = 5044.24;
         Investimentos inv = new CDBeLC(valor, tempo);
         inv.setMensal(mensal);
         inv.setTipo(tipo);
-        assertEquals(retorno, inv.previsaoRetorno());
+        inv.setTaxa(0.8848);
+        assertEquals(retorno, inv.simularTest());
     }
 
     @Test
@@ -104,12 +113,13 @@ public class testeInvestimento {
         Double valor = 5000.0;
         int tempo = 1;
         String tipo = "LC";
-        boolean mensal = false;
+        String mensal = "false";
         Double retorno = 5043.50;
         Investimentos inv = new CDBeLC(valor, tempo);
         inv.setMensal(mensal);
         inv.setTipo(tipo);
-        assertEquals(retorno, inv.previsaoRetorno());
+        inv.setTaxa(0.87);
+        assertEquals(retorno, inv.simularTest());
     }
 
 }

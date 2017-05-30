@@ -1,10 +1,9 @@
-package test.Testes;
+package Testes;
 
+import fidape.Sistema.TesouroDireto;
 import org.junit.Assert;
 import org.junit.Test;
 
-import src.java.Sistema.TesouroDireto;
-import java.text.DecimalFormat;
 
 /**
  * Created by adrianewey on 22/04/17.
@@ -22,8 +21,9 @@ public class testeTesouro {
         Double retorno = 5037.21;
 
         TesouroDireto tesouro = new TesouroDireto(valor, tempo);
+        tesouro.setTipo("selic");
         tesouro.setTaxaSELIC(0.7442);
-        Assert.assertEquals(retorno, tesouro.simuladorSelic());
+        Assert.assertEquals(retorno, tesouro.simularTest());
 
     }
 
@@ -34,8 +34,9 @@ public class testeTesouro {
         Double retorno = 5030.81;
 
         TesouroDireto tesouro = new TesouroDireto(valor, tempo);
+        tesouro.setTipo("ipca");
         tesouro.setTaxaIPCA(0.6162);
-        Assert.assertEquals(retorno, tesouro.simuladorIPCA());
+        Assert.assertEquals(retorno, tesouro.simularTest());
     }
 
     @Test
@@ -45,8 +46,9 @@ public class testeTesouro {
         Double retorno = 5031.67;
 
         TesouroDireto tesouro = new TesouroDireto(valor, tempo);
+        tesouro.setTipo("prefixado");
         tesouro.setTaxaPrefixado(0.6334);
-        Assert.assertEquals(retorno, tesouro.simuladorPrefixado());
+        Assert.assertEquals(retorno, tesouro.simularTest());
     }
 
     /*------Testes com entradas Mensais------*/
@@ -57,9 +59,10 @@ public class testeTesouro {
         Double retorno = 15224.37; // arredondou
 
         TesouroDireto tesouro = new TesouroDireto(valor, tempo);
+        tesouro.setTipo("selicMensal");
         tesouro.setTaxaSELIC(0.7442);
-        DecimalFormat formato = new DecimalFormat("#.##");
-        Assert.assertEquals(retorno, Double.valueOf(formato.format(tesouro.simulador_MensalSelic()).replace(',','.')));
+
+        Assert.assertEquals(retorno, tesouro.simularTest());
     }
 
     // Mudei o nome do método porque estava igual ao do primeiro método do IPCA
@@ -70,9 +73,9 @@ public class testeTesouro {
         Double retorno = 15185.62;
         
         TesouroDireto tesouro = new TesouroDireto(valor, tempo);
+        tesouro.setTipo("ipcaMensal");
         tesouro.setTaxaIPCA(0.6162);
-        DecimalFormat formato = new DecimalFormat("#.##");
-        Assert.assertEquals(retorno, Double.valueOf(formato.format(tesouro.simulador_MensalIPCA()).replace(',','.')));
+        Assert.assertEquals(retorno, tesouro.simularTest());
     }
 
     // Mudei o nome do método porque estava igual ao do primeiro método do Prefixo
@@ -83,9 +86,9 @@ public class testeTesouro {
         Double retorno = 15190.82;
 
         TesouroDireto tesouro = new TesouroDireto(valor, tempo);
-        tesouro.setTaxaIPCA(0.6334);
-        DecimalFormat formato = new DecimalFormat("#.##");
-        Assert.assertEquals(retorno, Double.valueOf(formato.format(tesouro.simulador_MensalIPCA()).replace(',','.')));
+        tesouro.setTipo("prefixadoMensal");
+        tesouro.setTaxaPrefixado(0.6334);
+        Assert.assertEquals(retorno, tesouro.simularTest());
     }
 
 }
