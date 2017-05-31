@@ -13,7 +13,7 @@
     <meta name="author" content="">
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/Chart.min.js"></script>
-
+    <script src="assets/materialize/js/materialize.js"></script>
 
 
     <link href="assets/materialize/css/materialize.min.css" rel="stylesheet">
@@ -117,19 +117,79 @@
                         <i class="material-icons md-96">trending_up</i>
                         <h3>Investimentos</h3>
                         <p>Confira como funciona cada investimento e saiba qual é o ideal para sua escolha.</p>
-                        <a href="#inv" uk-scroll="duration:1500">
-                            <button class="btn btn-default btn-lg waves-effect" type="button" id="btn-simular"> <font color="black"> Confira</font>
-                            </button>
-                        </a>
+                        
+                        
+                        
 
                     </div>
                 </div>
 
 
 
+                
             </div>
+            <center> 
+                <div class="uk-inline uk-visible-toggle ">
+            
+            <a id="previous-left" class="uk-position-center-left uk-position-small uk-hidden-hover uk-slidenav-large" href="#" uk-slidenav-previous></a>
+            <a id="next-right" class="uk-position-center-right uk-position-small uk-hidden-hover uk-slidenav-large" href="#" uk-slidenav-next></a>
+        
+                
+<div style="width: 500" class="carousel carousel-slider center" data-indicators="true">
+    
+                            <div class="carousel-fixed-item center">
+                              <a href="#inv" uk-scroll="duration:1500" class="btn waves-effect white black-text darken-text-2">Simule</a>
+                            </div>
+                            <div class="carousel-item   " href="#one!">
+                              <div id="tesouro-div">
+                                <center>  <h2>  Tesouro Direto  </h3>  </center>
+                                <center>  <h4> <font color="green"> Como Funciona ? </font>  </h2>  </center> <br>
+                                <p align="justify">  É considerada uma opção de investimento de baixo custo e que oferece rentabilidade superior à Poupança, sendo a aplicação de menor risco do mercado e ideal para quem quer começar a investir seu dinheiro. </p>
+                                <br>
+                                <p> <font color="red"> <b> Invista no Tesouro Direto: Clique no Botão Abaixo. </b> </font> </p>
+                               
+                                <br>
+                              </div>
+                            </div>
+                            <div class="carousel-item " href="#two!">
+                              <div id="cdb-div">
+                                    <center>  <h2>  CDB e LC  </h3>  </center>
+                                    <center>  <h4> <font color="green"> Como Funciona ? </font>  </h2>  </center> <br>
 
+                                    <p align="justify"> São investimentos que estão entre os mais rentáveis em renda fixa, que dão ao investidor a opção de saber exatamente quanto seu dinheiro vai render ou optar por acompanhar as taxas de juros do mercado. </p>
+
+                                    <br>
+                                    <p> <font color="red"> <b> Invista no CDB e LC: Clique no Botão Abaixo. </b> </font> </p>
+                                    
+                                    <br>
+                               </div>
+                            </div>
+                            <div class="carousel-item" href="#three!">
+                              <div id="lci-div">
+
+
+                                    <center> <h2>  LCI e LCA </h3>  </center>
+                                    <center>  <h4> <font color="green"> Como Funciona ? </font>  </h2>  </center> <br>
+
+                                    <p align="justify"> São dois tipos de investimentos em renda fixa de curto prazo e isentos de Imposto de Renda, que dão ao investidor a opção de saber exatamente quanto seu dinheiro vai render ou optar por acompanhar as taxas de juros do mercado. </p>
+
+                                    <br>
+                                    <p> <font color="red"> <b> Invista no LCI e LCA: Clique no Botão Abaixo. </b> </font> </p>
+                                    
+
+
+                                </div>
+                            </div>
+                           
+                        </div>
+        
+                        <script>
+                            $('.carousel.carousel-slider').carousel({fullWidth: true});
+                        </script>
         </div>
+              
+        </div>
+</center>
     </nav>
     <nav id="segundo-divisor" class="divisor">
         <div class="uk-divider-icon divisor">
@@ -604,7 +664,7 @@
 <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
 <script src="assets/uikit/js/uikit.min.js"></script>
 <script src="assets/uikit/js/uikit-icons.min.js"></script>
-<script src="assets/materialize/js/materialize.js"></script>
+
 <script src="assets/js/javascript.js"></script>
 
 </body>

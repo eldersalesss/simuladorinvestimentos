@@ -168,6 +168,8 @@
 
 $('#change').on('click',changer);
 
+
+
 function changer(){
     console.log("clickado")
     //$('#inv-confira').hide('slow');
