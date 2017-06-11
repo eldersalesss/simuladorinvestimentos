@@ -54,6 +54,8 @@
     color: #ffffff;
 }
 
+
+
 .navbar-default .navbar-brand:hover,.navbar-default .navbar-brand:focus
 {
     color: #ffffff;
@@ -575,9 +577,30 @@ column ~a
 
 .menu-sticky
 {
+    position: fixed;
     z-index: 980;
     height: 50px;
-    background-color: #222;
+    padding-right: 100%;
+    background-color: white;
+}
+
+.link-menu
+{
+    z-index:990;
+    position: absolute;
+    padding-left: 60%; 
+    padding-top: 15px;
+}
+
+.link-menu2
+{
+  
+    padding-right: 30px;
+}
+
+.link-menu2:hover .link-menu2:focus
+{
+    color: #ddd;
 }
 
 .centralizar
@@ -595,4 +618,9 @@ column ~a
     background-color: rgba(0, 0, 0, 0);
 }
 
-
+.btn-adm
+{
+    width: 100px;
+    height: 35px;
+    
+}

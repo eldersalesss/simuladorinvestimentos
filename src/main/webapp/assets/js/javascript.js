@@ -1,5 +1,34 @@
  $(document).ready(function() {
 
+    $('#form-adm').submit(function(e){
+        
+        if($('#user').val() == "admin" && $('#password').val() == "admin"){
+            $.post('showAdmin',$(this).serialize(),function(data){
+               $('#adm-mod').remove();
+               console.log(data)
+               $('#modal-adm').html(data);
+           });
+        }else{
+            $.post('acessoNegado',$(this).serialize(),function(data){
+               $('#adm-mod').remove();
+               $('#modal-adm').html(data);
+             
+           });
+        }
+            e.preventDefault();
+            console.log("SUbtm")
+        
+    });
+    
+    $('#form-edit').submit(function(e){
+       $.post('adminChanges',$(this).serialize(),function(data){
+          $('#adm-mod').remove();
+          console.log(data)
+          $('#modal-adm').html(data);
+       }); 
+       e.preventDefault();
+    });
+
      $('#formA').submit( function (e) {
 
          if($('#check').is(':checked')){
@@ -26,11 +55,12 @@
                  $.post('doTableDetail',function (table2) {
                      console.log(table2)
                      $('#table2').remove();
-                     $('#table-detalhada').html(table2);
+                     $('#table-detalhada').append(table2);
                      $('#load').hide();
                      $('#resultado').show();
                      $('#chart-drawed').remove();
                      $('#chart-draw').html(chart);
+                     
                  });
 
 
@@ -64,7 +94,7 @@
              $.post('doTable',function (table1) {
                  console.log(table1)
                  $('#table1').remove();
-                 $('#table-normal').html(table1)
+                 $('#table-normal').append(table1)
              });
 
              $.post('doTableDetail',function (table2) {
@@ -75,6 +105,9 @@
                  $('#resultado').show();
                  $('#chart-drawed').remove();
                  $('#chart-draw').html(chart);
+                 
+                 $('#table2').remove();
+                     $('#table-detalhada').html(table2);
              });
 
          });
@@ -113,11 +146,14 @@
              $.post('doTableDetail',function (table2) {
                  console.log(table2)
                  $('#table2').remove();
-                 $('#table-detalhada').html(table2);
+                 $('#table-detalhada').append(table2);
                  $('#load').hide();
                  $('#resultado').show();
                  $('#chart-drawed').remove();
                  $('#chart-draw').html(chart);
+                 
+                 $('#table2').remove();
+                     $('#table-detalhada').html(table2);
              });
 
          });
@@ -139,7 +175,10 @@
 
      //$('#sticky-menu').hide();
 
-
+        $.post('attTableTaxas',$(this).serialize(),function(table){
+                      $('#table-taxas').remove();
+                      $('#nav-taxa').html(table);
+         });
 
      $(window).bind('scroll', function() {
          var navHeight = 15;

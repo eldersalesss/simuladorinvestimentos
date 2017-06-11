@@ -19,7 +19,7 @@
     <link href="assets/materialize/css/materialize.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="assets/uikit/css/uikit.min.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="assets/font-awesome.min.css">
     <title>Fidape Investimentos</title>
     <!-- Bootstrap core CSS -->
 
@@ -36,7 +36,7 @@
 <body>
 
 <section id="inicio">
-    <div id="sticky-menu" style="display: none" class="menu-sticky" uk-sticky>
+    <div id="sticky-menu" style="display: none" class="uk-light menu-sticky" >
         <div>
             <div class="container-fluid">
                 <div class="navbar-header navbar-moveright">
@@ -46,22 +46,22 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand brand-text" href="#" uk-scroll style="color:white">fidape</a>
+                    <a class="navbar-brand brand-text" href="#" uk-scroll style="color:black">fidape</a>
+                    <div class="link-menu">
+                    <a class="link-menu2 inve-link menu" uk-scroll href="#primeiro-divisor" style="color: black">Investimentos</a>
+                        
+                    <a class="link-menu2 taxa-link menu" uk-scroll href="#segundo-divisor" style="color: black">Taxas</a>
+                    </div>
                 </div>
-                <div id="navbar-links">
-                    <ul class="nav navbar-nav pull-right">
-                        <li class="navbar-link">
-                            <a class="inve-link menu" uk-scroll href="#primeiro-divisor" >Investimentos</a>
-                        </li>
-                        <li class="navbar-link">
-                            <a class="taxa-link menu" uk-scroll href="#segundo-divisor" >Taxas</a>
-                        </li>
-                    </ul>
-                </div>
+                
+                    
+                            
+                       
+                
             </div>
         </div>
     </div>
-    <div class="div-tamanhoimage uk-background-cover" style="background-image: url(assets/images/item-bg.jpg)">
+    <div class="div-tamanhoimage uk-background-cover" style="background-image: url(assets/images/main-image2.jpg)">
         <div class="container container-remove ">
             <div class="row">
                 <nav class="navbar navbar-default navbar-remove " role="navigation">
@@ -111,7 +111,9 @@
 <section id="taxas">
     <nav class="uk-background-muted">
         <div class="container">
+            
             <div class="row" id="row-investimento">
+             
                 <div class="col-md-4 text-center col-md-offset-4" id="colum-investimento" uk-scrollspy="cls:uk-animation-fade">
                     <div id="inv-confira">
                         <i class="material-icons md-96">trending_up</i>
@@ -129,16 +131,16 @@
                 
             </div>
             <center> 
-                <div class="uk-inline uk-visible-toggle ">
+                <div style="width: 80%" class="uk-inline uk-visible-toggle ">
             
-            <a id="previous-left" class="uk-position-center-left uk-position-small uk-hidden-hover uk-slidenav-large" href="#" uk-slidenav-previous></a>
-            <a id="next-right" class="uk-position-center-right uk-position-small uk-hidden-hover uk-slidenav-large" href="#" uk-slidenav-next></a>
+            <label id="previous-left" class="uk-position-center-left uk-position-small uk-hidden-hover uk-slidenav-large" href="#" uk-slidenav-previous></label>
+            <label id="next-right" class="uk-position-center-right uk-position-small uk-hidden-hover uk-slidenav-large" href="#" uk-slidenav-next></label>
         
                 
-<div style="width: 500" class="carousel carousel-slider center" data-indicators="true">
+<div style="width: 700" class="carousel carousel-slider center validate text-center tooltipped" data-indicators="true" data-position="top" data-delay="50" data-tooltip="Arraste para os lados">
     
                             <div class="carousel-fixed-item center">
-                              <a href="#inv" uk-scroll="duration:1500" class="btn waves-effect white black-text darken-text-2">Simule</a>
+                              <a href="#terceiro-divisor" uk-scroll="duration:1500" class="btn waves-effect white black-text darken-text-2">Simule</a>
                             </div>
                             <div class="carousel-item   " href="#one!">
                               <div id="tesouro-div">
@@ -146,7 +148,7 @@
                                 <center>  <h4> <font color="green"> Como Funciona ? </font>  </h2>  </center> <br>
                                 <p align="justify">  É considerada uma opção de investimento de baixo custo e que oferece rentabilidade superior à Poupança, sendo a aplicação de menor risco do mercado e ideal para quem quer começar a investir seu dinheiro. </p>
                                 <br>
-                                <p> <font color="red"> <b> Invista no Tesouro Direto: Clique no Botão Abaixo. </b> </font> </p>
+                                <p> <font color="gray"> <b> Clique abaixo para simular </b> </font> </p>
                                
                                 <br>
                               </div>
@@ -159,7 +161,7 @@
                                     <p align="justify"> São investimentos que estão entre os mais rentáveis em renda fixa, que dão ao investidor a opção de saber exatamente quanto seu dinheiro vai render ou optar por acompanhar as taxas de juros do mercado. </p>
 
                                     <br>
-                                    <p> <font color="red"> <b> Invista no CDB e LC: Clique no Botão Abaixo. </b> </font> </p>
+                                    <p> <font color="gray"> <b> Clique abaixo para simular </b> </font> </p>
                                     
                                     <br>
                                </div>
@@ -174,7 +176,7 @@
                                     <p align="justify"> São dois tipos de investimentos em renda fixa de curto prazo e isentos de Imposto de Renda, que dão ao investidor a opção de saber exatamente quanto seu dinheiro vai render ou optar por acompanhar as taxas de juros do mercado. </p>
 
                                     <br>
-                                    <p> <font color="red"> <b> Invista no LCI e LCA: Clique no Botão Abaixo. </b> </font> </p>
+                                    <p> <font color="gray"> <b> Clique abaixo para simular </b> </font> </p>
                                     
 
 
@@ -196,57 +198,7 @@
         </div>
     </nav>
     <nav id="nav-taxa" class="uk-background-muted">
-        <div class="container">
-            <div class="row" id="row-taxa">
-                <div class="col-md-4 col-md-offset-4 text-center">
-                    <i class="material-icons md-96" uk-scrollspy="cls:uk-animation-slide-right">attach_money</i>
-                    <h3>Taxas</h3>
-                    <p>Veja a tabela de taxas dos investimentos</p>
-                </div>
-                <div class="col-md-6 col-md-offset-3 table-taxa" uk-scrollspy="cls:uk-animation-fade">
-                    <div class="table-responsive">
-                        <table class="table text-center">
-                            <thead>
-                            <tr>
-                                <th class="text-center">Investimentos</th>
-                                <th class="text-center">Taxas(%)</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td>Selic</td>
-                                <td>Mark</td>
-                            </tr>
-                            <tr>
-                                <td>IPCA</td>
-                                <td>Jacob</td>
-                            </tr>
-                            <tr>
-                                <td>Prefixado</td>
-                                <td>Larry</td>
-                            </tr>
-                            <tr class="table-separador">
-                                <td>LCI</td>
-                                <td>Larry</td>
-                            </tr>
-                            <tr>
-                                <td>LCA</td>
-                                <td>Larry</td>
-                            </tr>
-                            <tr class="table-separador">
-                                <td>CDB</td>
-                                <td>Larry</td>
-                            </tr>
-                            <tr>
-                                <td>LC</td>
-                                <td>Larry</td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
+        
     </nav>
 </section>
 <nav id="terceiro-divisor" class="divisor">
@@ -584,77 +536,61 @@
         </div>
     </div>
 </section>
-<nav class="divisor uk-background-secondary">
+<nav class="divisor ">
     <div class="uk-divider-icon divisor">
     </div>
 </nav>
 
-<section id="inv">
-    <nav class="uk-background-muted">
-        <div class="container">
-            <div class="row" id="row-investimento">
-                <div class="col-md-4 text-center col-md-offset-4" id="colum-investimento">
-                    <i class="material-icons md-96">trending_up</i>
-                    <h3>Sobre os Tipos de Investimentos</h3> <br>
 
-                    <div id="tesouro-div">
-                    <center>  <h2>  Tesouro Direto  </h3>  </center>
-                    <center>  <h4> <font color="green"> Como Funciona ? </font>  </h2>  </center> <br>
-                    <p align="justify">  É considerada uma opção de investimento de baixo custo e que oferece rentabilidade superior à Poupança, sendo a aplicação de menor risco do mercado e ideal para quem quer começar a investir seu dinheiro. </p>
-                    <br>
-                    <p> <font color="red"> <b> Invista no Tesouro Direto: Clique no Botão Abaixo. </b> </font> </p>
-                    <a href="#terceiro-divisor" uk-scroll="duration:1500">
-                        <button class="btn btn-default btn-lg waves-effect" type="button" id="btn-simular"><font color="black">Tesou. Direto </font></button>
-                    </a>
-                    <br>
+
+ <footer class="page-footer uk-background-secondary">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text" style="font-size:20px">Fidape Investimentos</h5>
+                <p class="grey-text text-lighten-4">Um projeto do curso Ciência da Computação destinado a disciplina Engenharia de Software, como
+                prática do framework Scrum objetivando obter aos membros experiências de trabalho em equipe.</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                  <form id="form-adm" style="color: white">
+                    <h5 class="white-text">Área administrativa</h5>
+                    <div class="input-field">
+                        <input id="user" type="text" class="validate">
+                        <label for="last_name">User</label>
                     </div>
-                    <div id="cdb-div">
-                        <center>  <h2>  CDB e LC  </h3>  </center>
-                        <center>  <h4> <font color="green"> Como Funciona ? </font>  </h2>  </center> <br>
-
-                        <p align="justify"> São investimentos que estão entre os mais rentáveis em renda fixa, que dão ao investidor a opção de saber exatamente quanto seu dinheiro vai render ou optar por acompanhar as taxas de juros do mercado. </p>
-
-                        <br>
-                        <p> <font color="red"> <b> Invista no CDB e LC: Clique no Botão Abaixo. </b> </font> </p>
-                        <a href="#terceiro-divisor" uk-scroll="duration:1500">
-                            <button class="btn btn-default btn-lg waves-effect" type="button" id="btn-simular"> <font color="black">CDB e LC </font>
-                            </button>
-                        </a>
-                        <br>
+                    <div class="input-field">
+                        <input id="password" type="password" class="validate">
+                        <label for="password">Password</label>
                     </div>
-
-
-                    <div id="lci-div">
-
-
-                        <center> <h2>  LCI e LCA </h3>  </center>
-                        <center>  <h4> <font color="green"> Como Funciona ? </font>  </h2>  </center> <br>
-
-                        <p align="justify"> São dois tipos de investimentos em renda fixa de curto prazo e isentos de Imposto de Renda, que dão ao investidor a opção de saber exatamente quanto seu dinheiro vai render ou optar por acompanhar as taxas de juros do mercado. </p>
-
-                        <br>
-                        <p> <font color="red"> <b> Invista no LCI e LCA: Clique no Botão Abaixo. </b> </font> </p>
-                        <a href="#terceiro-divisor" uk-scroll="duration:1500">
-                            <button class="btn btn-default btn-lg waves-effect" type="button" id="btn-simular"> <font color="black">LCI e LCA </font>
-                            </button>
-                        </a>
-
-
-                    </div>
-
-                    </a>
-                </div>
-
+                    <input style="color:black" value="Sign In" id="sub-adm" uk-toggle="target: #modal-adm" type="submit" class="uk-button btn-adm"/>
+                  </form>
+                 
+                  
+                  <div id="modal-adm" uk-modal="center: true">
+                      
+                        <div id="adm-mod" class="uk-modal-dialog">
+                            <button class="uk-modal-close-default" type="button" uk-close></button>
+                            <div class="uk-modal-header">
+                                <h2 class="uk-modal-title">Carregando</h2>
+                            </div>
+                            <div class="uk-modal-body">
+                                <table id="table2"></table>
+                            </div>
+                        </div>
+                  
+                   </div>
+              </div>
             </div>
-        </div>
-        </div>
-    </nav>
-
-    <center>  <a href="#" uk-totop uk-scroll class="btn-topo"> <b><h3> Topo </h3> </b></a>  </center>
-
-</section>
-
-
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+                
+            <a class="grey-text text-lighten-4 right" href="https://github.com/eldersalesss/simuladorinvestimentos/tree/v-final">
+                                <img class="icon icons8-GitHub" width="48" height="48" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAFFUlEQVR4Xu2aX1IaQRDGRX2PniB4gmCpz8ETqCcQTiCeQDxB8ATiCSInkDyrBTlB8ASBd//k+6jZ1LIy0927A1LCVqUqsjPT07/5uuffltaW/Cktuf9rKwArBSw5gVUILLkAVklwLiHQ6/W2Xl5ejt7e3iqlUqkC1ZXdv7QAB/hjgPddlBtsbGx0dnd3h7NW6MwAOKdP4UzNOW32BXX7qNsGjJtZwYgOAI6Xn5+fz9DxGjzeMns9vcIQMNqbm5tXAEGlRHuiAnh8fLxARxsRHc86OgTY1t7e3mUsAlEAYNQrGPXrvFK3OsPQgBpOYqihMACMeg0d+jHDUffxYYKs7+/v31oBpssXAuCcvy7SgaJ1obo6QqKdt53cABbB+cTpIhByAVgk51Mjf5InHMwAmPCwqLn7gJiXVD7EegF50TZNmgHc39/3fNkeyfDw4OCg62aFY5TjlPhF6rnwfoR2W8j6t3CuD/tVtMsBePdwdoD9XYs9EwAYb8L4hcfACBKcWPhwNYjpsZGpQ4f6bAO/j5e6+Htcz4H9Dwy/X8LxVnYV+PDw8OZzknUAoamFoAbAFR6k3/NJH4Z/wXB1mmFXtwKJ9iWJaspiILqA9d3jpCkU1ABAvQWDZwHyXgDa0dCWEwBQUWoVqAC4jc2fUOILKUDrmLacBADtUAU7mg2UCgCmvYZb7YX6OEQO2NY6UaQc1Pg3NBgun6gWSCoAocyfcuRdEiziZKguADB5BmcX7YwgAnDyJ/Hgk0yBUrkY70NTYbp9hMG2FAYiAOWqrwP5H8dwTtuGIg+wKXF1KAKQsj+tzHP0E0DoF4H/DAHTzAYiAAXpucV+1lkpF2hmJhEAjHD6K/tIa4xoZW0tpxicAUJzJ9SuBoB32enkP7cFUNYRBYA1AAj6uAIgyS608VgWBQzg6NcQKElmEuS876XBQbtP6Js3f9GuGAKaOHPrboKa2+N2jUzQ3keToKMAKHIml5eYZoEWBYBmIQQnupDaYV5n8tRDv3gqVBXqXqFfPJXyPqICNCsulwzHx2F5nLHW0e4F0G7xpbBhM8TbmkNp82F1NlveHbPdaW6homyG2AGogGd436TOuyurmUGwOI++/ob8eRUffMQQYG1NwkmsOAh1nuBKxi3vnex5C1XW1NMmZhUAFwYDGE4fQnRg5BYOMxGdTukU37WRFzqaDvvKwPEjd9Vu2W6rN2gqAC4MJg5F0ze07rKEl5S+BRNPcbvr6+v86iOoDI402qHTlC//n+cRs3/SqBqARwU8fGTM9x2EbkYl6c4/oWxFSpLODiEFV58BKiPYKUt2zABcLph2OMrveXglNQzlCm1MBuyolAA757gtplpVj1oBSWvTlsbpkxffCbKDpEqMhnl+wknNyi9LxQzAI/WJc3gnY97hlV9fX7k+4I2Q6YsvxUYn6wulX5VyTGEAbMBB4DVZ+mlj3q2rdKcoZAVgUVjavFkBSeVp8c5bXEx75wr/xCIWAJb8EkUBIQh4x48d25z2knIIgzLUcSN6nSqgBVDEeZrLrYCkr4rpb1zUemiiAJAr5qMqIA0B3wG0AlfWUQEw2yOxNqwJb5oCCysg3aibApv47d29XSQFjAC5aZnnpbCLCsDNEPwwmhBqaRAFAYzQFr8Zblqn07kDyCiihgTIj6X70slMtqM8iYLUK9g/tIt8B/ihACTji/A+eggsglOWPqwAWGh9xrIrBXzGUbX4tFKAhdZnLLv0CvgHUVv2X+hPYisAAAAASUVORK5CYII=">
+                GitHub</a>
+            </div>
+          </div>
+        </footer>
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
@@ -666,6 +602,6 @@
 <script src="assets/uikit/js/uikit-icons.min.js"></script>
 
 <script src="assets/js/javascript.js"></script>
-
+ <script src="assets/materialize/js/materialize.js"></script>
 </body>
 </html>

@@ -1,5 +1,6 @@
 package fidape.Controller;
 
+import fidape.Sistema.Admin;
 import fidape.Sistema.Investimentos;
 import fidape.Sistema.Resultado;
 
@@ -7,11 +8,12 @@ import fidape.Sistema.Resultado;
  * Created by adrianewey on 15/05/17.
  */
 public class ActionHelper {
+    private Admin admin;
 
     public ActionHelper(){
 
     }
-
+    
     public void convertInvestimento(Investimentos inv, ParamHelper pam){
 
 
@@ -20,41 +22,42 @@ public class ActionHelper {
         inv.setTipo(pam.getTipo());
         inv.setMensal(pam.getMensal());
 
+        Admin admin = new Admin();
         if(pam.getClasse().equalsIgnoreCase("TesouroDireto")) {
             if (pam.getTipo().equalsIgnoreCase("selic")) {
-                inv.setTaxa(0.7442);
+                inv.setTaxa(admin.getTaxas("selic"));
             } else if (pam.getTipo().equalsIgnoreCase("ipca")) {
-                inv.setTaxa(0.6162);
+                inv.setTaxa(admin.getTaxas("ipca"));
             } else if (pam.getTipo().equalsIgnoreCase("prefixado")) {
-                inv.setTaxa(0.6334);
+                inv.setTaxa(admin.getTaxas("prefixado"));
             }else if(pam.getTipo().equalsIgnoreCase("anual.selic")){
-                inv.setTaxa(0.7442);
+                inv.setTaxa(admin.getTaxas("selic"));
             }else if(pam.getTipo().equalsIgnoreCase("anual.ipca")){
-                inv.setTaxa(0.6162);
+                inv.setTaxa(admin.getTaxas("ipca"));
             }else if(pam.getTipo().equalsIgnoreCase("anual.prefixado")){
-                inv.setTaxa(0.6334);
+                inv.setTaxa(admin.getTaxas("prefixado"));
             }
         }
         else if(pam.getClasse().equalsIgnoreCase("LCIeLCA")){
             if (pam.getTipo().equalsIgnoreCase("lci")) {
-                inv.setTaxa(0.9202);
+                inv.setTaxa(admin.getTaxas("lci"));
             } else if (pam.getTipo().equalsIgnoreCase("lca")) {
-                inv.setTaxa(0.8912);
+                inv.setTaxa(admin.getTaxas("lca"));
             }else if(pam.getTipo().equalsIgnoreCase("anual.lci")){
-                inv.setTaxa(0.9202);
+                inv.setTaxa(admin.getTaxas("lci"));
             }else if(pam.getTipo().equalsIgnoreCase("anual.lca")){
-                inv.setTaxa(0.8912);
+                inv.setTaxa(admin.getTaxas("lca"));
             }
         }
         else if(pam.getClasse().equalsIgnoreCase("CDBeLC")){
             if (pam.getTipo().equalsIgnoreCase("cdb")) {
-                inv.setTaxa(0.8848);
+                inv.setTaxa(admin.getTaxas("cdb"));
             } else if (pam.getTipo().equalsIgnoreCase("lc")) {
-                inv.setTaxa(0.87);
+                inv.setTaxa(admin.getTaxas("lc"));
             }else if(pam.getTipo().equalsIgnoreCase("anual.cdb")){
-                inv.setTaxa(0.8848);
+                inv.setTaxa(admin.getTaxas("cdb"));
             }else if(pam.getTipo().equalsIgnoreCase("anual.lc")){
-                inv.setTaxa(0.87);
+                inv.setTaxa(admin.getTaxas("lc"));
             }
         }
 
