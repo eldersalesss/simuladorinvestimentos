@@ -30,6 +30,7 @@ public class LCIeLCA extends Investimentos {
     @Override
     public Resultado previsaoRetorno() {
         if(tipo.startsWith("anual.")) {
+            this.anual = "true";
             if (tipo.equalsIgnoreCase("anual.LCI")) {
                 return simuladorLCI();
             } else if (tipo.equalsIgnoreCase("anual.LCA")) {
