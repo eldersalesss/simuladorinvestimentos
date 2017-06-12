@@ -326,8 +326,8 @@
                                                             <div class=" col-md-offset-1 col-md-10 espaco-bottom">
                                                                 <div class="input-field col  centralizar-form">
                                                                     <i class="material-icons corrigir-icon prefix">attach_money</i>
-                                                                    <input name="valor" id="dinheiro-investido" class="validate text-center tooltipped" data-position="bottom" data-delay="35" data-tooltip="Nota: Reais  -  Valor fixo sem pontuações." type="number">
-                                                                    <label for="dinheiro-investido">Dinheiro</label>
+                                                                    <input name="valor" id="dinheiro-investido2" class="validate text-center tooltipped" data-position="bottom" data-delay="35" data-tooltip="Nota: Reais  -  Valor fixo sem pontuações." type="number">
+                                                                    <label for="dinheiro-investido2">Dinheiro</label>
                                                                 </div>
                                                                 <div class="corrigir-00">
                                                                     ,00
@@ -350,8 +350,8 @@
                                                                     <div class=" espaco-bottom col-md-5 col-md-offset-4">
                                                                         <div class="input-field col  espaco-divtempo">
                                                                             <i class="material-icons corrigir-icon prefix">access_time</i>
-                                                                            <input value="0" name="tempoAno" id="tempo-investimento" class="validate text-center tooltipped" data-position="bottom" data-delay="50" data-tooltip="Quantidade de anos" type="number">
-                                                                            <label for="tempo-investimento">Anos</label>
+                                                                            <input value="0" name="tempoAno" id="tempo-investimento2" class="validate text-center tooltipped" data-position="bottom" data-delay="50" data-tooltip="Quantidade de anos" type="number">
+                                                                            <label for="tempo-investimento2">Anos</label>
                                                                         </div>
                                                                     </div>
                                                                 </li>
@@ -393,8 +393,8 @@
                                                             <div class=" col-md-offset-1 col-md-10 espaco-bottom">
                                                                 <div class="input-field col  centralizar-form">
                                                                     <i class="material-icons corrigir-icon prefix">attach_money</i>
-                                                                    <input name="valor" id="dinheiro-investido" class="validate text-center tooltipped" data-position="bottom" data-delay="35" data-tooltip="Nota: Reais  -  Valor fixo sem pontuações." type="number">
-                                                                    <label for="dinheiro-investido">Dinheiro</label>
+                                                                    <input name="valor" id="dinheiro-investido3" class="validate text-center tooltipped" data-position="bottom" data-delay="35" data-tooltip="Nota: Reais  -  Valor fixo sem pontuações." type="number">
+                                                                    <label for="dinheiro-investido3">Dinheiro</label>
                                                                 </div>
                                                                 <div class="corrigir-00">
                                                                     ,00
@@ -417,8 +417,8 @@
                                                                     <div class=" espaco-bottom col-md-5 col-md-offset-4">
                                                                         <div class="input-field col  espaco-divtempo">
                                                                             <i class="material-icons corrigir-icon prefix">access_time</i>
-                                                                            <input value="0" name="tempoAno" id="tempo-investimento" class="validate text-center tooltipped" data-position="bottom" data-delay="50" data-tooltip="Quantidade de anos" type="number">
-                                                                            <label for="tempo-investimento">Anos</label>
+                                                                            <input value="0" name="tempoAno" id="tempo-investimento3" class="validate text-center tooltipped" data-position="bottom" data-delay="50" data-tooltip="Quantidade de anos" type="number">
+                                                                            <label for="tempo-investimento3">Anos</label>
                                                                         </div>
                                                                     </div>
                                                                 </li>
