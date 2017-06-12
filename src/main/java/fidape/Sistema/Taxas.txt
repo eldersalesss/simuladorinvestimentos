@@ -2,6 +2,6 @@ selic:0.7442
 ipca:0.6162
 prefixado:0.6334
 cdb:0.8848
-lc:50.87
+lc:0.87
 lci:0.9202
 lca:0.8912
