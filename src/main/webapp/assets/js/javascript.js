@@ -55,7 +55,7 @@
                  $.post('doTableDetail',function (table2) {
                      console.log(table2)
                      $('#table2').remove();
-                     $('#table-detalhada').append(table2);
+                     $('#table-detalhada').html(table2);
                      $('#load').hide();
                      $('#resultado').show();
                      $('#chart-drawed').remove();
@@ -94,7 +94,7 @@
              $.post('doTable',function (table1) {
                  console.log(table1)
                  $('#table1').remove();
-                 $('#table-normal').append(table1)
+                 $('#table-normal').html(table1)
              });
 
              $.post('doTableDetail',function (table2) {
@@ -106,8 +106,6 @@
                  $('#chart-drawed').remove();
                  $('#chart-draw').html(chart);
                  
-                 $('#table2').remove();
-                     $('#table-detalhada').html(table2);
              });
 
          });
@@ -146,14 +144,12 @@
              $.post('doTableDetail',function (table2) {
                  console.log(table2)
                  $('#table2').remove();
-                 $('#table-detalhada').append(table2);
+                 $('#table-detalhada').html(table2);
                  $('#load').hide();
                  $('#resultado').show();
                  $('#chart-drawed').remove();
                  $('#chart-draw').html(chart);
                  
-                 $('#table2').remove();
-                     $('#table-detalhada').html(table2);
              });
 
          });
