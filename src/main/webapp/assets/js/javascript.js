@@ -274,6 +274,12 @@ function clear() {
     $('#dinheiro-investido').val("");
     $('#tempo-investido').val("0");
     $('#check').prop('checked',false);
+    
+    $('#dinheiro-investido2').val("");
+    $('#tempo-investimento2').val("0");
+    
+    $('#dinheiro-investido3').val("");
+    $('#tempo-investimento3').val("0");
 
 }
 
